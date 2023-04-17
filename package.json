@@ -1,0 +1,33 @@
+{
+  "name": "MOOC_PRACTICA_ODM",
+  "author": "BBDD-ETSIT",
+  "license": "GNU",
+  "version": "0.0.0",
+  "capturesFolder": "miscapturas",
+  "capturesNumber": 1,
+  "info": {
+    "githubURL": "BBDD-ETSIT/MOOC_PRACTICA_ODM",
+    "serverUrl": "https://moocbot.dit.upm.es/",
+    "courseId": "1312",
+    "assignmentId": "811"
+},
+  "scripts": {
+    "start": "node rest_server.js",
+    "seed": "md-seed run"
+  },
+  "dependencies": {
+    "autocorector": "^3.1.6",
+    "body-parser": "~1.12.4",
+    "ejs": "^3.0.1",
+    "express": "~4.13.1",
+    "method-override": "^2.3.1",
+    "mocha": "^7.0.1",
+    "mongoose": "^5.8.11",
+    "mongoose-data-seed": "^2.1.6",
+    "nodemon": "^2.0.2",
+    "popper.js": "^1.16.1"
+  },
+  "mdSeed": {
+    "seedersFolder": "./seeders"
+  }
+}
