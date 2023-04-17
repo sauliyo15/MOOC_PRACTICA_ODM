@@ -230,19 +230,17 @@ Para ayudar al desarrollo, se provee una herramienta de autocorrección que prue
 
 La herramienta de autocorrección preguntará por el correo del alumno y el token de Moodle. En el enlace [https://www.npmjs.com/package/autocorector](https://www.npmjs.com/package/autocorector) se proveen instrucciones para encontrar dicho token.
 
-Para instalar y hacer uso de la [herramienta de autocorrección](https://www.npmjs.com/package/autocorector) en el ordenador local, ejecuta los siguientes comandos en el directorio del proyecto:
-
 ```
-$ autocorector
+$ npx autocorector
 ```
 
 Se puede pasar la herramienta autocorector tantas veces como se desee sin ninguna repercusión en la calificación.
 
-## 7. Instrucciones para la Entrega y Evaluación.
+## 9. Instrucciones para la Entrega y Evaluación.
 
 Una vez satisfecho con su calificación, el alumno puede subir su entrega a Moodle con el siguiente comando:
 ```
-$ autocorector --upload
+$ npx autocorector --upload
 ```
 
 El alumno podrá subir al Moodle la entrega tantas veces como desee pero se quedará registrada solo la última subida.
