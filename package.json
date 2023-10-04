@@ -8,8 +8,8 @@
   "info": {
     "githubURL": "BBDD-ETSIT/MOOC_PRACTICA_ODM",
     "serverUrl": "https://moocbot.dit.upm.es/",
-    "courseId": "1312",
-    "assignmentId": "811"
+    "courseId": "1521",
+    "assignmentId": "878"
 },
   "scripts": {
     "start": "node rest_server.js",
