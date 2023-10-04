@@ -54,13 +54,13 @@ Abra un terminal en su ordenador y siga los siguientes pasos.
 El proyecto debe clonarse en el ordenador desde el que se está trabajando con:
 
 ```
-$ git clone https://github.com/BBDD-ETSIT/nosql_practica4_bbdd
+$ git clone https://github.com/BBDD-ETSIT/MOOC_PRACTICA_ODM
 ```
 
 y entrar en el directorio de trabajo
 
 ```
-$ cd nosql_practica4_bbdd
+$ cd MOOC_PRACTICA_ODM
 ```
 
 Una vez dentro de la carpeta, se instalan las dependencias con:
