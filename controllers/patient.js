@@ -95,7 +95,13 @@ exports.filterPatientsByCity = async function (city) {
 };
 
 exports.filterPatientsByDiagnosis = async function (diagnosis) {
-  // Rellene aqui ...
+  try {
+    const patients = await Patient.find({"medicalHistory.diagnosis": diagnosis});
+    return patients;
+  } catch (error) {
+    console.error("Error leyendo los pacientes por ciudad:", error);
+    throw error;
+  }
 };
 
 exports.filterPatientsBySpeacialistAndDate = async function (
