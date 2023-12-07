@@ -99,7 +99,7 @@ exports.filterPatientsByDiagnosis = async function (diagnosis) {
     const patients = await Patient.find({"medicalHistory.diagnosis": diagnosis});
     return patients;
   } catch (error) {
-    console.error("Error leyendo los pacientes por ciudad:", error);
+    console.error("Error leyendo los pacientes por enfermedad:", error);
     throw error;
   }
 };
@@ -109,7 +109,18 @@ exports.filterPatientsBySpeacialistAndDate = async function (
   sDate,
   fDate
 ) {
-  // Rellene aqui ...
+  try {
+    const patients = await Patient.find({
+      $and: [
+        { "medicalHistory.specialist": specialist },
+        { "medicalHistory.date": { $gte: sDate, $lte: fDate } }
+      ]
+    });
+    return patients;
+  } catch (error) {
+    console.error("Error leyendo los pacientes por ciudad:", error);
+    throw error;
+  }  
 };
 
 exports.addPatientHistory = async function (patientId, medicalRecord) {
