@@ -85,7 +85,13 @@ exports.delete = async function (patientId) {
 };
 
 exports.filterPatientsByCity = async function (city) {
-  // Rellene aqui ...
+  try {
+    const patients = await Patient.find({city: city});
+    return patients;
+  } catch (error) {
+    console.error("Error leyendo los pacientes por ciudad:", error);
+    throw error;
+  }
 };
 
 exports.filterPatientsByDiagnosis = async function (diagnosis) {
