@@ -2,15 +2,13 @@
 const Patient = require('../models/patient');
 
 exports.list = async function() {
-    // Rellene aqui ...
-    console.log("entra en el método list")
     const patients = await Patient.find();
-    console.log("patients: ", patients);
     return patients;
 }
 
 exports.read = async function(patientId) {
-    // Rellene aqui ...
+    const patient = await Patient.findOne({_id: patientId});
+    return patient;
 }
 
 exports.create = async function(body) {
