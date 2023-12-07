@@ -101,5 +101,21 @@ exports.filterPatientsBySpeacialistAndDate = async function (
 };
 
 exports.addPatientHistory = async function (patientId, medicalRecord) {
-  // Rellene aqui ...
+  try {
+    const new_medical_record = {
+      specialist: medicalRecord.specialist,
+      diagnosis: medicalRecord.diagnosis,
+      date: medicalRecord.date,
+    };
+
+    const patient = await Patient.findOne({ _id: patientId });
+    patient.medicalHistory.push(new_medical_record);
+
+    const resultado = await patient.save();
+
+    return resultado;
+  } catch (error) {
+    console.error("Error al añadir una cita medica en el paciente:", error);
+    throw error;
+  }
 };
