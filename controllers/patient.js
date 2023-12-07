@@ -75,7 +75,13 @@ exports.update = async function (patientId, body) {
 };
 
 exports.delete = async function (patientId) {
-  // Rellene aqui ...
+  try {
+    const result = await Patient.deleteOne({ _id: patientId });
+    return result;
+  } catch (error) {
+    console.error("Error al borrar el paciente:", error);
+    throw error;
+  }
 };
 
 exports.filterPatientsByCity = async function (city) {
