@@ -22,13 +22,56 @@ exports.read = async function (patientId) {
 };
 
 exports.create = async function (body) {
-    
+  try {
+    let nuevo_documento;
+
+    if (body._id) {
+      nuevo_documento = new Patient({
+        _id: body._id,
+        name: body.name,
+        surname: body.surname,
+        dni: body.dni,
+        city: body.city,
+      });
+    } else {
+      nuevo_documento = new Patient({
+        name: body.name,
+        surname: body.surname,
+        dni: body.dni,
+        city: body.city,
+      });
+    }
+
+    const resultado = await nuevo_documento.save();
+
+    return resultado;
+  } catch (error) {
+    console.error("Error al guardar el paciente:", error);
+    throw error;
+  }
 };
 
 exports.update = async function (patientId, body) {
-  // Rellene aqui ...
-  console.log("BODY: ", body);
-  console.log("patientId: ", patientId);
+  try {
+    const patient = await Patient.findOne({ _id: patientId });
+
+    if (!patient) {
+      console.log("No se ha encontrado el paciente");
+      return;
+    } else {
+      patient.name = body.name;
+      patient.surname = body.surname;
+      patient.dni = body.dni;
+      patient.city = body.city;
+
+      const resultado = await patient.save();
+
+      return resultado;
+    }
+  } catch (error) {
+    console.error("Error al actualizar el paciente:", error);
+    throw error;
+  }
 };
 
 exports.delete = async function (patientId) {
